@@ -6,8 +6,19 @@ h1{
     color: papayawhip;
 }
 
+h3{
+    color: papayawhip;
+}
+
+a{
+    color: papayawhip;
+    vertical-align: bottom;
+}
+
 p{
+    color: papayawhip;
     animation: backwards;
+    border: 2px solid salmon;
 }
 
 ul {
