@@ -19,12 +19,12 @@ h1{
     display: inline-block;
     font-size: 20px;
     margin: 25px 200px;
-    transform: scale(1.5,1.5);
+    /*transform: scale(1.5,1.5);*/
   }
 
 .button:hover  {
     /*background-color: blue;*/
-    transform: scale(2,2);
+    transform: scale(1.2,1.2);
     /*border: 10px solid white;*/
   }
 
