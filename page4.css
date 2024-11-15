@@ -1,0 +1,73 @@
+/* Seadistab kogu lehe tausta */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'VT323', monospace;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #00FF00;
+    text-align: center;
+}
+
+/* Taust GIF-iga */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Katab kogu tausta GIF-iga */
+    background-image: url('https://static.wixstatic.com/media/b492df_36aaf78e9f74429099bb0fd09e9ae3c7~mv2.gif');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 0.7; /* Muudab GIF-i veidi läbipaistvaks */
+}
+
+/* Alumine 2/3 ala musta taustaga */
+.content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 66.67%; /* Võtab alumise 2/3 kõrgusest */
+    background-color: rgba(0, 0, 0, 0.8); /* Peaaegu must taust, kergelt läbipaistev */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* Teksti stiil */
+h1, p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Vilkuv nupp */
+.start-button {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    animation: blink 1s infinite;
+    cursor: pointer;
+    z-index: 3;
+    position: relative;
+}
+
+/* Vilkuva nupu animatsioon */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
