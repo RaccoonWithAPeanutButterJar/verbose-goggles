@@ -1,24 +1,25 @@
 body{
-    background-image: url("Images/Esileht.png");
-    font-family: "arcadeclassic";
+    background-image: url("Assets/Esileht.png");
+    font-family: "Press Start 2P";
+    background-color: black;
 }
 
 h1{
     padding-top: 150px;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .button {
     /*background-color: #04AA6D;*/
     border: none;
     color: white;
-    /*padding: 30px 50px;*/
+    padding-bottom: 6px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
-    margin: 25px 200px;
+    font-size: 8px;
+    margin: 100px 200px;
     transform: scale(1.5,1.5);
   }
 
@@ -37,5 +38,11 @@ h1{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 10px;
+  /*font-size: 10px;*/
+}
+
+p {
+  padding-left: 350px;
+  padding-right: 350px;
+  font-size: 17px;
 }
