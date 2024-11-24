@@ -1,3 +1,4 @@
+// kood pärineb veebilehelt https://codepen.io/dylangggg/pen/pQJzpz
 const scoreEl = document.querySelector('#scoreEl')
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
