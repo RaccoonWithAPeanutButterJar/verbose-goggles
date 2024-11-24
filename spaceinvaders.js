@@ -6,6 +6,7 @@ const c = canvas.getContext('2d')
 canvas.width = innerWidth
 canvas.height = innerHeight
 
+//loome klassi mängija jaoks
 class Player{
     constructor() {
         this.velocity = {
@@ -58,7 +59,7 @@ class Player{
     }
 
 }
-
+//loome klassi kuulide jaoks
 class Projectile {
     constructor({ position, velocity }) {
         this.position = position
@@ -80,7 +81,7 @@ class Projectile {
         this.position.y += this.velocity.y
     }
 }
-
+//loome klassi kosmose tähtede ja hävinemise plahvatuse jaoks
 class Particle {
     constructor({ position, velocity, radius, color, fades }) {
         this.position = position
@@ -109,7 +110,7 @@ class Particle {
         if (this.fades) this.opacity -= 0.01
     }
 }
-
+//loome klassi vastaste kuulide jaoks
 class InvaderProjectile {
     constructor({ position, velocity }) {
         this.position = position
@@ -130,7 +131,7 @@ class InvaderProjectile {
         this.position.y += this.velocity.y
     }
 }
-
+//loome klassi vastase jaoks
 class Invader{
     constructor({position}) {
         this.velocity = {
@@ -185,7 +186,7 @@ class Invader{
         }))
     }
 }
-
+//loome klassi vastaste tekitamise jaoks
 class Grid{
     constructor(){
         this.position = {
@@ -231,6 +232,7 @@ class Grid{
     }
 }
 
+//loome konstandid välja näevad
 const player = new Player()
 const projectiles = []
 const grids = []
@@ -258,6 +260,7 @@ let game = {
 }
 let score = 0
 
+//loome funktsiooni selleks, et tekitada tausta kosmosesse tähti
 for (let i = 0; i<100; i++) {
     particles.push(
         new Particle({
@@ -275,6 +278,7 @@ for (let i = 0; i<100; i++) {
     )
 }
 
+//loome funktsiooni selleks, et tekitada kuule
 function createParticles({object, color, fades}){
     for (let i = 0; i<15; i++) {
         particles.push(
@@ -295,6 +299,7 @@ function createParticles({object, color, fades}){
     }
 }
 
+//loome funktsiooni selleks, et animeerida kuule, tegelast, vastaseid jne
 function animate() {
     if (!game.active) return
     requestAnimationFrame(animate)
@@ -314,6 +319,7 @@ function animate() {
             particle.update()
         }
     })
+    //vastaste kuulide tekitamine
     invaderProjectiles.forEach((invaderProjectile, index) => {
         if (invaderProjectile.position.y + invaderProjectile.height >= canvas.height) {
             setTimeout(() => {
@@ -321,6 +327,7 @@ function animate() {
             }, 0)
         } else invaderProjectile.update()
 
+        //kas tegelane sai kuuliga pihta
         if (invaderProjectile.position.y + invaderProjectile.height >= player.position.y &&
             invaderProjectile.position.x + invaderProjectile.width >= player.position.x &&
             invaderProjectile.position.x <= player.position.x + player.width
@@ -354,6 +361,7 @@ function animate() {
         }
     })
 
+    //vastaste tekitamine
     grids.forEach((grid, gridIndex) => {
         grid.update()
     if (frames % 100 === 0 && grid.invaders.length > 0){
@@ -362,6 +370,7 @@ function animate() {
         grid.invaders.forEach((invader, i) => {
             invader.update({ velocity: grid.velocity })
 
+            //kontrollime kas kuul tabas vastast
             projectiles.forEach((projectile, j) => {
                 if (projectile.position.y - projectile.radius <= invader.position.y + invader.height &&
                     projectile.position.x + projectile.radius >= invader.position.x &&
@@ -372,6 +381,7 @@ function animate() {
                         const invaderFound = grid.invaders.find(invader2 => invader2 === invader)
                         const projectileFound = projectiles.find(projectile2 => projectile2 === projectile)
 
+                        //kui vastane sai hävitatud +100 punkti
                         if (invaderFound && projectileFound) {
                             score += 100
                             scoreEl.innerHTML = score
@@ -397,6 +407,7 @@ function animate() {
         })
     })
 
+    //mängija liikumine ja väike kalle ka, et näeks parem välja
     if (keys.a.pressed && player.position.x >= 0){
         player.velocity.x = -5
         player.rotation = -.15
@@ -418,6 +429,7 @@ function animate() {
 
 animate()
 
+//eventlistenerid, et jälgida kuna mängija vajutab 'a', 'd' või 'space'
 addEventListener('keydown', ({ key }) => {
     if (game.over) return
     switch  (key){
