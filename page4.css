@@ -30,36 +30,23 @@ body, html {
 
 /* Alumine 2/3 ala musta taustaga */
 .content {
-    position: absolute;
     bottom: 0;
-    height: 66.67%; /* Võtab alumise 2/3 kõrgusest */
     color: white;
-    display: flex;
-    align-items: center;
-    text-align: center;
     z-index: 2;
 }
 
 /* Teksti stiil */
 h1, p {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Vilkuv nupp */
-.start-button {
-    font-size: 30px;
-    border: 2px solid #00FF00;
-    padding: 10px 20px;
-    display: inline-block;
-    margin-top: -300px;
-    animation: blink 1s infinite;
-    cursor: pointer;
-    z-index: 3;
-}
 
-/* Vilkuva nupu animatsioon */
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
+.button {
+    margin: 50px 100px;
+  }
+
+.button:hover  {
+    transform: scale(2,2);
+  }
+
