@@ -140,7 +140,7 @@ class Invader{
         const image = new Image()
         image.src = './Assets/invader.png'
         image.onload = () => {
-            const scale = 0.09
+            const scale = 0.5
             this.image = image
             this.width = image.width * scale
             this.height = image.height * scale
