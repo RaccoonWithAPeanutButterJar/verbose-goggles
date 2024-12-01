@@ -1,5 +1,6 @@
-body{
+@font-face {
     font-family: "Press Start 2P";
+    src: url(Assets\arcadeclassic.regular.ttf);
 }
 
 .button {
