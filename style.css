@@ -13,7 +13,7 @@
     display: inline-block;
     font-size: 8px;
     font-family: "PSP";
-    transform: scale(1.5,1.5);
+    transform: scale(3,3);
   }
 
 .button:hover  {
