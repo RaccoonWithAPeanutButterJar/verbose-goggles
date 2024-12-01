@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "Press Start 2P";
-    src: url(Assets\PressStart2P-vaV7.ttf);
+    font-family: "PSP";
+    src: url(Assets/PressStart2P-vaV7.ttf);
 }
 
 .button {
@@ -20,6 +20,7 @@
   }
 
 h1{
+    font-family: "PSP";
     color: papayawhip;
 }
 
@@ -33,6 +34,7 @@ a{
 }
 
 p{
+    font-family: 'VT323', monospace;
     color: papayawhip;
     animation: backwards;
 }
