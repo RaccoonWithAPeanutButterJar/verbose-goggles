@@ -16,10 +16,6 @@
     transform: scale(3,3);
   }
 
-.button:hover  {
-    transform: scale(2,2);
-  }
-
 h1{
     font-family: "PSP";
     color: papayawhip;
