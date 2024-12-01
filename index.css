@@ -1,20 +1,23 @@
 body{
     background-image: url("Assets/Esileht.png");
     background-color: black;
+    width: auto;
+    height: auto;
 }
 
 h1{
     padding-top: 150px;
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .button {
-    margin: 100px 200px;
+    margin: 100px 300px;
+    transform: scale(3, 3);
   }
 
 .button:hover  {
-    transform: scale(2,2);
+    transform: scale(4,4);
   }
 
 .center {
@@ -31,5 +34,5 @@ h1{
 p {
   padding-left: 350px;
   padding-right: 350px;
-  font-size: 17px;
+  font-size: 21px;
 }
